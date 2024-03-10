@@ -10,7 +10,7 @@ import User from "./type.ts";
 import End from "./components/End.tsx";
 
 function App() {
-  const [user, setUser] = useState(2);
+  const [user, _setUser] = useState(2);
 
   // setUser will set the user data provided by the backend
   // user will use it to store the data in localstorage for now later it can be stored in database.
@@ -24,6 +24,7 @@ function App() {
       `input[name='${name}']:checked`,
     ) as HTMLInputElement;
     // Storing answer of questions
+    // @ts-ignore
     author.response[`question${name}`] = selectedInput.value;
 
     // Checking for existing response
